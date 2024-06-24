@@ -102,6 +102,8 @@ hr{
 
 // 表單
 form{
+  max-width: 800px;
+  margin: auto;
   input,
   select{
     width: 100%;
@@ -242,6 +244,7 @@ input[type=search]{
 .checkGrp{
   display: flex;
   flex-wrap: wrap;
+  padding: .5em 0;
   > label{
     display: flex;
     flex-wrap: nowrap;
