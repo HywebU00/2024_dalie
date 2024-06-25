@@ -608,8 +608,12 @@
     height: 52px;
     border: none;
     background: url(../images/icon-search.svg) 50% 50% no-repeat;
-    background-size: 32px 32px;
+    background-size: 46px 46px;
     display: none;
+  }
+  .mobileSearchBtn:hover, .mobileSearchBtn:focus-visible {
+    background: url(../images/icon-search-hover.svg) 50% 50% no-repeat;
+    background-size: 46px 46px;
   }
   @media (max-width: 992px) {
     .mobileSearchBtn {
@@ -642,8 +646,8 @@
     border-color: #fff;
   }
   .mobileShow .site-search button.submit {
-    right: calc(15% - 40px);
-    top: calc(50vh - 50px);
+    right: calc(15% - 39px);
+    top: calc(50vh - 49px);
   }
   .mobileShow.act {
     display: block;
@@ -918,13 +922,20 @@
   }
   .site-search button.submit {
     font-size: 0;
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     border: none;
-    background: url(../images/icon-search.svg) 50% 50% no-repeat;
-    background-size: 24px 24px;
+    background: url(../images/icon-search.svg) 50% 50% no-repeat transparent;
+    background-size: 36px 36px;
     position: absolute;
-    right: 0;
+    top: 1px;
+    right: 1px;
+    border-radius: 0 3px 3px 0;
+    transition: 0.3s;
+  }
+  .site-search button.submit:hover, .site-search button.submit:focus-visible {
+    background: url(../images/icon-search.svg) 50% 50% no-repeat #464646;
+    background-size: 36px 36px;
   }
   @media (max-width: 992px) {
     .site-search {
