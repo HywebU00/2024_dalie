@@ -875,7 +875,7 @@ header{
 
 // 遮罩
 .mask{
-  max-height: 300px;
+  max-height: 440px;
   overflow: hidden;
   position: relative;
   .btn{
@@ -885,7 +885,6 @@ header{
     z-index: 2;
     transform: translateX(-50%);
   }
-
   &:after{
     content: "";
     position: absolute;
@@ -896,5 +895,16 @@ header{
     height: 80px;
     backdrop-filter: blur(1px);
     background-image: linear-gradient(180deg, rgb(41 41 41 / 0%) -3% -3%, rgb(41 41 41) 98% 98%);
+  }
+
+  &._show{
+    max-height: initial;
+    .btn{
+      position: inherit;
+    }
+    &:after{
+      // opacity: 0;
+      height: 0;
+    }
   }
 }

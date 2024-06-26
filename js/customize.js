@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // 手機版 search btn switch
     $('.mobileSearchBtn').click(function() {
         if ($('.mobileShow').hasClass('act')) {
             $('.mobileShow').removeClass('act').fadeOut();
@@ -6,10 +7,23 @@ $(document).ready(function() {
             $('.mobileShow').addClass('act').fadeIn();
         }
     });
-
+    // 寬度異動時，移除.act
     $(window).resize(function() {
         if ($(window).width() > 991) {
             $('.mobileShow').removeClass('act').hide();
+        }
+    });
+
+    // 內容摘要 閱讀全文 btn
+    $('.mask .btn').click(function() {
+        var $mask = $('.mask');
+        var $btn = $(this);
+        if ($mask.hasClass('_show')) {
+            $mask.removeClass('_show');
+            $btn.text('閱讀全文');
+        } else {
+            $mask.addClass('_show');
+            $btn.text('顯示較少內容');
         }
     });
 
