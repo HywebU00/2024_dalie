@@ -825,6 +825,9 @@
     display: flex;
     align-items: center;
   }
+  .card .info ul li img {
+    width: 24px;
+  }
   .card .info .flexible {
     font-size: 75%;
     margin-top: 8px;
