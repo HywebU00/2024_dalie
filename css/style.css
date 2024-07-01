@@ -660,6 +660,7 @@
   .col_2, .col_3, .col_39, .col_48 {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
   }
   .col_2 > .col, .col_3 > .col, .col_39 > .col, .col_48 > .col {
     margin-top: 0.75em;
@@ -763,8 +764,8 @@
     display: flex;
   }
   .card .dataDefine .num {
-    color: #F4EA5A;
-    box-shadow: inset 0 0 0 1px #F4EA5A;
+    color: #fff;
+    box-shadow: inset 0 0 0 1px #fff;
     padding: 2px 10px;
     border-radius: 15px;
   }
@@ -783,6 +784,24 @@
     background: url(../images/icon-state.png) left 50% no-repeat;
     background-size: 20px 20px;
   }
+  .card .state.red, .card .state.green, .card .state.yellow {
+    font-weight: bold;
+  }
+  .card .state.red {
+    color: red;
+    background: url(../images/icon-state_red.svg) left 50% no-repeat;
+    background-size: 20px 20px;
+  }
+  .card .state.yellow {
+    color: yellow;
+    background: url(../images/icon-state_yellow.svg) left 50% no-repeat;
+    background-size: 20px 20px;
+  }
+  .card .state.green {
+    color: #2fbe08;
+    background: url(../images/icon-state_green.svg) left 50% no-repeat;
+    background-size: 20px 20px;
+  }
   .card .share {
     padding-left: 22px;
     background: url(../images/icon-share.svg) left 50% no-repeat;
@@ -790,6 +809,7 @@
   }
   .card .foto img {
     width: 100%;
+    border-radius: 6px;
   }
   .card .info p {
     display: -webkit-box;
@@ -802,6 +822,8 @@
   }
   .card .info ul li {
     line-height: 1.55;
+    display: flex;
+    align-items: center;
   }
   .card .info .flexible {
     font-size: 75%;
