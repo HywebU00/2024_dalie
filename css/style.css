@@ -712,32 +712,37 @@
   }
   .col_39 > .col:first-child {
     flex: 0 0 20%;
+    min-width: 85px;
+    max-width: 85px;
   }
   .col_39 > .col:last-child {
-    flex: 0 1 80%;
-    max-width: 80%;
-    padding-left: 1em;
+    flex: 0 1 auto;
+    max-width: calc(100% - 85px - 1em);
   }
   .col_48 > .col:first-child {
     flex: 0 0 30%;
-    margin-right: 1em;
   }
   .col_48 > .col:last-child {
     flex: 0 1 100%;
     max-width: calc(70% - 20px);
   }
+  .col_48 > .col .col_48 {
+    flex-wrap: nowrap;
+  }
+  .col_48 > .col .col_48 > .col:first-child {
+    min-width: 100px;
+    max-width: 100px;
+    width: 100px;
+    height: 100px;
+  }
+  .col_48 > .col .col_48 > .col:last-child {
+    max-width: initial;
+    padding-left: 16px;
+  }
   @media (max-width: 992px) {
     .col_48 > .col:first-child, .col_48 > .col:last-child {
       flex: 0 0 100%;
       max-width: 100%;
-    }
-    .col_48 > .col .col_48 > .col:first-child {
-      flex: 0 0 30%;
-      margin-right: 1em;
-    }
-    .col_48 > .col .col_48 > .col:last-child {
-      flex: 0 1 100%;
-      max-width: calc(70% - 20px);
     }
   }
   .card {
@@ -807,9 +812,17 @@
     background: url(../images/icon-share.svg) left 50% no-repeat;
     background-size: 20px 20px;
   }
+  .card .foto {
+    width: 85px;
+    height: 85px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
   .card .foto img {
     width: 100%;
-    border-radius: 6px;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .card .info p {
     display: -webkit-box;

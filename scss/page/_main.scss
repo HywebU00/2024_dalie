@@ -547,11 +547,17 @@ header{
   > .col{
     &:first-child{
       flex: 0 0 20%;
+      min-width: 85px;
+      max-width: 85px;
     }
     &:last-child{
-      flex: 0 1 80%;
-      max-width: 80%;
-      padding-left: 1em;
+      flex: 0 1 auto;
+      max-width: calc(100% - 85px - 1em);
+    }
+  }
+  @media (max-width: $screenMd) {
+    > .col{
+
     }
   }
 }
@@ -559,11 +565,27 @@ header{
   > .col{
     &:first-child{
       flex: 0 0 30%;
-      margin-right: 1em;
+      // margin-right: 1em;
     }
     &:last-child{
       flex: 0 1 100%;
       max-width: calc(70% - 20px);
+    }
+
+    .col_48{
+      flex-wrap: nowrap;
+      > .col{
+        &:first-child{
+          min-width: 100px;
+          max-width: 100px;
+          width: 100px;
+          height: 100px;
+        }
+        &:last-child{
+          max-width: initial;
+          padding-left: 16px;
+        }
+      }
     }
   }
   @media (max-width: $screenMd) {
@@ -572,19 +594,6 @@ header{
       &:last-child{
         flex: 0 0 100%;
         max-width: 100%;
-      }
-      .col_48{
-        > .col{
-          // background: pink;
-          &:first-child{
-            flex: 0 0 30%;
-            margin-right: 1em;
-          }
-          &:last-child{
-            flex: 0 1 100%;
-            max-width: calc(70% - 20px);
-          }
-        }
       }
     }
   }
@@ -663,9 +672,14 @@ header{
   }
 
   .foto{
+    width: 85px;
+    height: 85px;
+    border-radius: 6px;
+    overflow: hidden;
     img{
       width: 100%;
-      border-radius: 6px;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .info{
