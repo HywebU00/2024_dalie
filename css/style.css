@@ -771,16 +771,19 @@
   .card .dataDefine .num {
     color: #fff;
     box-shadow: inset 0 0 0 1px #fff;
+    min-width: 54px;
     padding: 2px 10px;
     border-radius: 15px;
+    margin-right: 4px;
   }
   .card .dataDefine img {
     width: 20px;
     height: 20px;
-    margin: 0 5px;
+    margin: 0 2px;
   }
   .card .dataDefine .tip {
     padding-left: 22px;
+    margin-left: 4px;
     background: url(../images/icon-alert.svg) left 50% no-repeat;
     background-size: 20px 20px;
   }
@@ -807,9 +810,19 @@
     background: url(../images/icon-state_green.svg) left 50% no-repeat;
     background-size: 20px 20px;
   }
+  .card button.share,
   .card .share {
-    padding-left: 22px;
-    background: url(../images/icon-share.svg) left 50% no-repeat;
+    padding: 4px 12px 4px 32px;
+    background: url(../images/icon-share.svg) 10px 50% no-repeat transparent;
+    background-size: 20px 20px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+  }
+  .card button.share:hover, .card button.share:focus-visible,
+  .card .share:hover,
+  .card .share:focus-visible {
+    background: url(../images/icon-share.svg) 10px 50% no-repeat #222;
     background-size: 20px 20px;
   }
   .card .foto {
@@ -840,6 +853,7 @@
   }
   .card .info ul li img {
     width: 24px;
+    margin: 0 2px;
   }
   .card .info .flexible {
     font-size: 75%;
@@ -924,13 +938,16 @@
   }
   .function .tags {
     margin-left: 10px;
+    display: flex;
+    gap: 6px;
   }
   .function .tags a {
     color: #fff;
     border: 1px solid #fff;
     padding: 6px 20px;
+    word-break: keep-all;
     border-radius: 20px;
-    margin: auto 3px;
+    margin: auto 1px;
     opacity: 0.4;
     transition: 0.3s;
   }
