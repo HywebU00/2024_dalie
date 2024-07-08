@@ -554,7 +554,7 @@ $imgWH: 60px;
     }
     &:last-child{
       flex: 0 1 auto;
-      max-width: calc(100% - $imgWH - 1em);
+      max-width: calc(100% - $imgWH - .5em);
     }
   }
   @media (max-width: $screenMd) {
@@ -626,7 +626,7 @@ $imgWH: 60px;
     }
   }
   > .flexible,
-  > a .flexible{
+  > a > .flexible{
     font-size: 75%;
     margin-bottom: .5em;
     word-break: break-all;

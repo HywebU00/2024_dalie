@@ -717,7 +717,7 @@
   }
   .col_39 > .col:last-child {
     flex: 0 1 auto;
-    max-width: calc(100% - 60px - 1em);
+    max-width: calc(100% - 60px - 0.5em);
   }
   .col_48 > .col:first-child {
     flex: 0 0 30%;
@@ -765,13 +765,13 @@
     box-shadow: 0 0 0 2px #686868;
   }
   .card > .flexible,
-  .card > a .flexible {
+  .card > a > .flexible {
     font-size: 75%;
     margin-bottom: 0.5em;
     word-break: break-all;
   }
   .card > .flexible a,
-  .card > a .flexible a {
+  .card > a > .flexible a {
     color: #fff;
     opacity: 0.6;
   }
