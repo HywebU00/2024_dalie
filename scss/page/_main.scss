@@ -399,7 +399,7 @@ header{
 // 內容
 .main{
   .container{
-    padding-top: calc(100px + 4em);
+    padding-top: calc(100px + 1em);
     padding-bottom: 4em;
   }
 
@@ -486,8 +486,8 @@ header{
 // flex > .col 設定 
 .col_2, .col_3, .col_39, .col_48{
   > .col{
-    margin-top: .75em;
-    margin-bottom: .75em;
+    margin-top: .25em;
+    margin-bottom: .25em;
     .col{
       margin-top: 0;
       margin-bottom: 0;
@@ -543,16 +543,18 @@ header{
     }
   }
 }
+
+$imgWH: 60px;
 .col_39{
   > .col{
     &:first-child{
       flex: 0 0 20%;
-      min-width: 85px;
-      max-width: 85px;
+      min-width: $imgWH;
+      max-width: $imgWH;
     }
     &:last-child{
       flex: 0 1 auto;
-      max-width: calc(100% - 85px - 1em);
+      max-width: calc(100% - $imgWH - 1em);
     }
   }
   @media (max-width: $screenMd) {
@@ -603,11 +605,30 @@ header{
 // 卡片
 .card{
   background: #383838;
-  padding: 1em;
+  padding: .5em 1em;
   border-radius: 8px;
-  > .flexible{
+  a{
+    display: block;
+    color: #fff;
+  }
+  > a{
+    padding: 0.5em 1em;
+    margin: -.5em -1em;
+    border-radius: 8px;
+    // .card 一個莫名撐開的 margin-bottom 高度 6px
+
+    box-shadow: 0 0 0 2px transparent;
+    // box-shadow: 0 0 0 1px #545353;
+    transition: .3s;
+
+    &:hover, &:focus-visible{
+      box-shadow: 0 0 0 2px #686868;
+    }
+  }
+  > .flexible,
+  > a .flexible{
     font-size: 75%;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     word-break: break-all;
     a{
       color: #fff;
@@ -621,7 +642,6 @@ header{
     align-items: center;
   }
   .dataDefine{
-    display: flex;
     .num{
       // color: $linkColor;
       color: #fff;
@@ -632,8 +652,8 @@ header{
       margin-right: 4px;
     }
     img{
-      width: 20px;
-      height: 20px;
+      width: 19px;
+      height: 19px;
       margin: 0 2px;
     }
     .tip{
@@ -685,8 +705,8 @@ header{
   }
 
   .foto{
-    width: 85px;
-    height: 85px;
+    width: $imgWH;
+    height: $imgWH;
     border-radius: 6px;
     overflow: hidden;
     img{
@@ -700,10 +720,13 @@ header{
       color: #fff;
     }
     p{
+      font-size: 90%;
+      line-height: 1.3;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       overflow: hidden;
+      margin: 4px 0 2px;
     }
     ul{
       list-style: none;
@@ -712,17 +735,20 @@ header{
         display: flex;
         align-items: center;
 
+        span{
+          color: $linkColor;
+        }
+
         img{
-          width: 24px;
+          width: 20px;
           margin: 0 2px;
         }
       }
     }
     .flexible{
       font-size: 75%;
-      margin-top: 8px;
-      a{
-        color: #fff;
+      a, span{
+        // color: #fff;
         opacity: .6;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -857,7 +883,7 @@ header{
   align-items: center;
   position: relative;
   max-width: 600px;
-  margin: 2em auto;
+  margin: 1em auto;
   button.submit{
     font-size: 0;
     width: 50px;
@@ -918,11 +944,24 @@ header{
   }
   p{
     line-height: 2;
+    padding-bottom: 2em;
   }
   ol, ul{
     margin: 1em 0 1em 1em;
     li{
       margin: 10px 0;
+      display: flex;
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        border-radius: 50%;
+        left: -12px;
+        top: 8px;
+      }
       time{
         margin-right: 12px;
       }

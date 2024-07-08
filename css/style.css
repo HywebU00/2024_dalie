@@ -595,7 +595,7 @@
     }
   }
   .main .container {
-    padding-top: calc(100px + 4em);
+    padding-top: calc(100px + 1em);
     padding-bottom: 4em;
   }
   .mobileSearchBtn {
@@ -663,8 +663,8 @@
     align-items: flex-start;
   }
   .col_2 > .col, .col_3 > .col, .col_39 > .col, .col_48 > .col {
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
   }
   .col_2 > .col .col, .col_3 > .col .col, .col_39 > .col .col, .col_48 > .col .col {
     margin-top: 0;
@@ -712,12 +712,12 @@
   }
   .col_39 > .col:first-child {
     flex: 0 0 20%;
-    min-width: 85px;
-    max-width: 85px;
+    min-width: 60px;
+    max-width: 60px;
   }
   .col_39 > .col:last-child {
     flex: 0 1 auto;
-    max-width: calc(100% - 85px - 1em);
+    max-width: calc(100% - 60px - 1em);
   }
   .col_48 > .col:first-child {
     flex: 0 0 30%;
@@ -747,15 +747,31 @@
   }
   .card {
     background: #383838;
-    padding: 1em;
+    padding: 0.5em 1em;
     border-radius: 8px;
   }
-  .card > .flexible {
+  .card a {
+    display: block;
+    color: #fff;
+  }
+  .card > a {
+    padding: 0.5em 1em;
+    margin: -0.5em -1em;
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px transparent;
+    transition: 0.3s;
+  }
+  .card > a:hover, .card > a:focus-visible {
+    box-shadow: 0 0 0 2px #686868;
+  }
+  .card > .flexible,
+  .card > a .flexible {
     font-size: 75%;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     word-break: break-all;
   }
-  .card > .flexible a {
+  .card > .flexible a,
+  .card > a .flexible a {
     color: #fff;
     opacity: 0.6;
   }
@@ -765,9 +781,6 @@
     display: flex;
     align-items: center;
   }
-  .card .dataDefine {
-    display: flex;
-  }
   .card .dataDefine .num {
     color: #fff;
     box-shadow: inset 0 0 0 1px #fff;
@@ -776,8 +789,8 @@
     margin-right: 4px;
   }
   .card .dataDefine img {
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
     margin: 0 2px;
   }
   .card .dataDefine .tip {
@@ -825,8 +838,8 @@
     background-size: 20px 20px;
   }
   .card .foto {
-    width: 85px;
-    height: 85px;
+    width: 60px;
+    height: 60px;
     border-radius: 6px;
     overflow: hidden;
   }
@@ -840,10 +853,13 @@
     color: #fff;
   }
   .card .info p {
+    font-size: 90%;
+    line-height: 1.3;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    margin: 4px 0 2px;
   }
   .card .info ul {
     list-style: none;
@@ -853,16 +869,17 @@
     display: flex;
     align-items: center;
   }
+  .card .info ul li span {
+    color: #F4EA5A;
+  }
   .card .info ul li img {
-    width: 24px;
+    width: 20px;
     margin: 0 2px;
   }
   .card .info .flexible {
     font-size: 75%;
-    margin-top: 8px;
   }
-  .card .info .flexible a {
-    color: #fff;
+  .card .info .flexible a, .card .info .flexible span {
     opacity: 0.6;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -975,7 +992,7 @@
     align-items: center;
     position: relative;
     max-width: 600px;
-    margin: 2em auto;
+    margin: 1em auto;
   }
   .site-search button.submit {
     font-size: 0;
@@ -1030,12 +1047,25 @@
   }
   .article p {
     line-height: 2;
+    padding-bottom: 2em;
   }
   .article ol, .article ul {
     margin: 1em 0 1em 1em;
   }
   .article ol li, .article ul li {
     margin: 10px 0;
+    display: flex;
+    position: relative;
+  }
+  .article ol li:before, .article ul li:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    left: -12px;
+    top: 8px;
   }
   .article ol li time, .article ul li time {
     margin-right: 12px;
