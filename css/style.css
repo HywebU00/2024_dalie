@@ -276,7 +276,7 @@
   }
   .mainTitle {
     text-align: center;
-    margin-bottom: 4em;
+    margin: 2em 0;
   }
   .mainTitle h2 {
     color: #F4EA5A;
@@ -594,9 +594,17 @@
       flex: 1 1 auto;
     }
   }
+  .main {
+    overflow-x: hidden;
+  }
   .main .container {
     padding-top: calc(100px + 1em);
     padding-bottom: 4em;
+  }
+  @media (max-width: 992px) {
+    .main .container {
+      padding-top: calc(100px + 2em);
+    }
   }
   .mobileSearchBtn {
     position: fixed;
@@ -739,7 +747,7 @@
     max-width: initial;
     padding-left: 16px;
   }
-  @media (max-width: 992px) {
+  @media (max-width: 1200px) {
     .col_48 > .col:first-child, .col_48 > .col:last-child {
       flex: 0 0 100%;
       max-width: 100%;
@@ -1039,7 +1047,6 @@
     letter-spacing: 1px;
   }
   .article > hr {
-    margin-top: 0;
     display: none;
   }
   .article h3 {
@@ -1047,7 +1054,6 @@
   }
   .article p {
     line-height: 2;
-    padding-bottom: 2em;
   }
   .article ol, .article ul {
     margin: 1em 0 1em 1em;
@@ -1068,15 +1074,17 @@
     top: 8px;
   }
   .article ol li time, .article ul li time {
-    margin-right: 12px;
+    margin-right: 8px;
+    min-width: 156px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     .article > hr {
       display: block;
     }
   }
   .mask {
-    max-height: 440px;
+    height: 440px;
+    padding-bottom: 2em;
     overflow: hidden;
     position: relative;
   }
@@ -1094,13 +1102,16 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 80px;
+    height: 55px;
     -webkit-backdrop-filter: blur(1px);
             backdrop-filter: blur(1px);
     background-image: linear-gradient(180deg, rgba(41, 41, 41, 0) -3% -3%, rgb(41, 41, 41) 98% 98%);
   }
+  .mask.hide:after {
+    display: none;
+  }
   .mask._show {
-    max-height: initial;
+    height: initial;
   }
   .mask._show .btn {
     position: inherit;

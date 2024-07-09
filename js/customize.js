@@ -14,6 +14,22 @@ $(document).ready(function() {
         }
     });
 
+    function checkHeight() {
+        if ($('p').height() < 400) {
+            $('button.btn').hide();
+            $('.mask:after').hide();  // 請注意這裡 :after 需要特別處理
+        } else {
+            $('button.btn').show();
+            $('.mask:after').show();  // 同上
+        }
+    }
+    // 初次檢查
+    checkHeight();
+    // 當窗口大小變化時重新檢查
+    $(window).resize(function() {
+        checkHeight();
+    });
+
     // 內容摘要 閱讀全文 btn
     $('.mask .btn').click(function() {
         var $mask = $('.mask');
