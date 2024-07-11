@@ -85,6 +85,14 @@
               </div>
             </section>
         </section>
+        <section class="card _narrow">
+          <h4>各平台過去一個月詐騙通報數量</h4>
+          <section>
+              <div class="lineChart">
+                <canvas id="line-chart2"></canvas>
+              </div>
+            </section>
+        </section>
       </div>
     </div>
     <!-- js -->
@@ -182,6 +190,104 @@
       })
       // 線條圖
       new Chart(document.getElementById("line-chart"), {
+        type: "line",
+        data: {
+          labels: [01, 02, 03, 04, 05, 06, 07, 08],
+          datasets: [
+            {
+              data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210],
+              label: "過去8週",
+              borderColor: "#F4EA5A",
+              backgroundColor: "#F4EA5A",
+              pointRadius: 4,
+              pointHoverRadius:4,
+              fill: false
+            },
+            {
+              data: [2820, 3500, 1200, 5020, 6350, 5090, 7470, 1402],
+              label: "前一期",
+              borderColor: "#f35588",
+              backgroundColor: "#f35588",
+              pointRadius: 4,
+              pointHoverRadius:4,
+              fill: false
+            }
+          ]
+        },
+        options: {
+          // layout: {
+          //   padding: {
+          //     left: 20,
+          //     right: 20,
+          //     top: 20,
+          //     bottom: 20
+          //   }
+          // },
+          elements: {
+              line: {
+                  tension: 0
+              }
+          },
+          label: {},
+          legend: {
+            display: true,
+            position: "bottom",
+            labels: {
+              // boxWidth: 50,
+              fontSize: 16,
+              fontColor: "#ffffff",
+              fontStyle: "normal",
+              padding: 16
+            }
+          },
+          tooltips: {
+            // mode: "point",
+            // backgroundColor: "rgba(0, 98, 90, 1)",
+            // fontColor: "#222222",
+            // yPadding: 10,
+            // xPadding: 50,
+            // titleAlign: "center",
+            // bodyAlign: "center",
+            displayColors: false
+          },
+          scales: {
+            xAxes: [
+              {
+                ticks: {
+                  // Include a dollar sign in the ticks
+                  // callback: function (value, index, values) {
+                  //   return value;
+                  // },
+                  fontSize: 14,
+                  fontColor: "#ffffff"
+                },
+                gridLines:{
+                  color:"#4f4f4f",
+                  zeroLineColor:"#4f4f4f"
+                }
+              }
+            ],
+            yAxes: [
+              {
+                ticks: {
+                  // Include a dollar sign in the ticks
+                  // callback: function (value, index, values) {
+                  //   return value + " $";
+                  // },
+                  fontSize: 14,
+                  fontColor: "#ffffff"
+                },
+                gridLines:{
+                  color:"#4f4f4f",
+                  zeroLineColor:"#4f4f4f"
+                }
+              }
+            ]
+          }
+        }
+      });
+      // 線條圖 2
+      new Chart(document.getElementById("line-chart2"), {
         type: "line",
         data: {
           labels: [01, 02, 03, 04, 05, 06, 07, 08],

@@ -15,11 +15,11 @@ $(document).ready(function() {
     });
 
     function checkHeight() {
-        if ($('p').height() < 400) {
-            $('button.btn').hide();
+        if ($('.mask p').height() < 400) {
+            $('.mask button.btn').hide();
             $('.mask:after').hide();  // 請注意這裡 :after 需要特別處理
         } else {
-            $('button.btn').show();
+            $('.mask button.btn').show();
             $('.mask:after').show();  // 同上
         }
     }

@@ -611,8 +611,10 @@ $imgWH: 60px;
 // 卡片
 .card{
   background: #383838;
-  padding: .5em 1em;
+  padding: .65em 1em;
+  margin: .5em 0;
   border-radius: 8px;
+  z-index: 0; // 讓 _mixed 的 黃色圓形背景可被看到
   a{
     display: block;
     color: #fff;
@@ -789,7 +791,7 @@ $imgWH: 60px;
   }
   h4{
     font-size: 1.5em;
-    margin: 1em 0 1.5em;
+    margin: 1em 0;
     b{
       padding: 0 4px;
       color: $linkColor;
@@ -800,7 +802,6 @@ $imgWH: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
     > span{
       color: #222;
       background: $linkColor;
@@ -812,7 +813,7 @@ $imgWH: 60px;
       border-radius: 50%;
       text-align: center;
       font-weight: bold;
-      margin-right: 20px;
+      margin-right: 16px;
     }
     b{
       span{
@@ -824,6 +825,52 @@ $imgWH: 60px;
   &._narrow{
     // 窄版
     padding: 1.5em 3em;
+  }
+  &._mixed{
+    $size: auto;
+    // 部會、時間＋數據
+    h4{
+      margin: 0;
+    }
+    .flexible{
+      padding: 6px 0;
+      font-size: 100%;
+      margin-bottom: 0;
+      span{
+        letter-spacing: 1px;
+      }
+    }
+    p.data{
+      justify-content: flex-end;
+      margin: 0;
+      font-size: 1.25em;
+
+      > span{
+        font-size: 75%;
+        height: $size;
+        width: $size;
+        line-height: normal;
+        min-width: $size;
+        margin-right: 12px;
+        border-radius: 0;
+        background: none;
+
+        position: relative;
+        &:before{
+          content: '';
+          position: absolute;
+          isolation: isolate;
+          width: 42px;
+          height: 42px;
+          background: $linkColor;
+          border-radius: 50%;
+          left: -50%;
+          top: -50%;
+          transform: translate(25%);
+          z-index: -1;
+        }
+      }
+    }
   }
 }
 
@@ -922,7 +969,8 @@ $imgWH: 60px;
     align-items: center;
   }
   .tip{
-    font-size: 1.25em;
+    font-size: 1.125em;
+    padding: .5em 0 1em;
   }
   ._setting{
     font-size: 0;
