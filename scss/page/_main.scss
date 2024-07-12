@@ -139,7 +139,8 @@ select{
 }
 input{}
 select{
-  padding-right: 40px;
+  // padding-right: 40px;
+  padding: 8px 40px 8px 15px;
   appearance: none;
   background: url(../images/icon-arrowDown.svg) no-repeat right 18px center;
 }
@@ -199,7 +200,6 @@ $select-height: 40px;
     }
   }
 }
-
 .select-options {
   display: none; 
   position: absolute;
@@ -226,6 +226,88 @@ $select-height: 40px;
     }
     &[rel="hide"] {
       display: none;
+    }
+  }
+}
+
+// 假的 select --------------------------
+.drop {
+  position: relative;
+  display: block;
+  font-size: 1em;
+  width: 100%;
+  min-width: 220px;
+  margin: 6px 0;
+  &:hover, &:focus-visible {
+    .dropOption {
+      display: block;
+      border-color: #fff;
+    }
+    .dropDown {
+      display: block;
+    }
+    .dropDown.close {
+      display: none;
+    }
+  }
+  .dropOption {
+    position: relative;
+    width: auto;
+    color: #fff;
+    padding: 8px 40px 8px 15px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 12px;
+      border-width: 8px 6px;
+      border-style: solid;
+      border-color: #999 transparent transparent transparent;
+    }
+  }
+  .dropDown {
+    display: none;
+    width: 100%;
+    max-height: 350px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background-color: #292929;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: none;
+    box-sizing: border-box;
+    overflow: auto;
+    z-index: 10;
+    > li {
+      display: block;
+      color: #fff;
+      padding: 12px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      &:last-child {
+        border-bottom: none;
+      }
+      &:hover {
+        background-color: #474747;
+      }
+    }
+    &::-webkit-scrollbar {
+      width: 15px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #eee;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: orange;
+      border-radius: 15px;
+    }
+    &::-webkit-scrollbar-button {
+      background-color: #f9f9f9;
     }
   }
 }
