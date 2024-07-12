@@ -1221,6 +1221,9 @@
       display: none;
     }
   }
+  .user {
+    padding-top: 2em;
+  }
   .user h3.phoneNum {
     font-size: 2.25em;
     color: #F4EA5A;
