@@ -1049,7 +1049,7 @@
     height: auto;
     width: auto;
     line-height: normal;
-    min-width: auto;
+    min-width: 32px;
     margin-right: 12px;
     border-radius: 0;
     background: none;
