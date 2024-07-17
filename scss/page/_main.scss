@@ -373,11 +373,11 @@ header{
     // background: #5d5d5d;
   }
   h1{
-    padding-left: 240px;
-    background: url(../images/logo.png) left 50% no-repeat;
+    padding-left: 330px;
+    background: url(../images/logo.svg) left 50% no-repeat;
     // background-size: 226px 70px;
     background-size: contain;
-    height: 70px;
+    height: 52px;
     font-size: 1.65em;
     letter-spacing: 3px;
     font-weight: normal;
@@ -465,7 +465,7 @@ header{
       height: 40px;
       margin-top: 10px;
       margin-bottom: 0;
-      padding-left: 146px;
+      padding-left: 254px;
       font-size: 90%;
     }
     .menu{
@@ -476,6 +476,12 @@ header{
         height: 70px;
         flex: 1 1 auto;
       }
+    }
+  }
+  @media (max-width: $screenXs) {
+    h1{
+      padding-left: 80px;
+      background: url(../images/logo_mobile.svg) left 50% no-repeat;
     }
   }
 }
@@ -723,6 +729,12 @@ $imgWH: 60px;
     a{
       color: #fff;
       opacity: .6;
+      font-size: 125%;
+      transition: .3s;
+
+      &:hover, &:focus-visible{
+        opacity: 1;
+      }
     }
   }
   .dataDefine,
@@ -730,6 +742,9 @@ $imgWH: 60px;
   .share{
     display: flex;
     align-items: center;
+  }
+  .function{
+    margin: 0;
   }
   .dataDefine{
     .num{
@@ -787,9 +802,21 @@ $imgWH: 60px;
     border-radius: 15px;
     border: none;
     transition: .3s;
-
     &:hover, &:focus-visible{
       background: url(../images/icon-share.svg) 10px 50% no-repeat #222;
+      background-size: 20px 20px;
+    }
+  }
+  .duplicate{
+    // padding-left: 22px;
+    padding: 4px 12px 4px 32px;
+    background: url(../images/icon-duplicate.svg) 10px 50% no-repeat transparent;
+    background-size: 20px 20px;
+    border-radius: 15px;
+    border: none;
+    transition: .3s;
+    &:hover, &:focus-visible{
+      background: url(../images/icon-duplicate.svg) 10px 50% no-repeat #222;
       background-size: 20px 20px;
     }
   }
@@ -1034,7 +1061,7 @@ $duration: 1.4s;
 // 頁面轉換 function
 .p_shift{
   display: flex;
-  justify-content: flex-end;
+  // justify-content: flex-end;
   margin: 1em 0;
   a{
     display: block;
