@@ -868,7 +868,6 @@
   .card > a > .flexible a {
     color: #fff;
     opacity: 0.6;
-    font-size: 125%;
     transition: 0.3s;
   }
   .card > .flexible a:hover, .card > .flexible a:focus-visible,
