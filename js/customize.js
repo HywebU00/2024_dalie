@@ -43,6 +43,17 @@ $(document).ready(function() {
         }
     });
 
+    // 社群icon 分享
+    $('.function .share').on('click', function() {
+        if (!$(this).hasClass('act')) {
+            $(this).addClass('act');
+            $(this).siblings('.socialMedia').addClass('Show');
+        } else {
+            $(this).removeClass('act');
+            $(this).siblings('.socialMedia').removeClass('Show');
+        }
+    });
+
     // select 樣式
     // $('select').each(function(){
     //     var $this = $(this), numberOfOptions = $(this).children('option').length;
