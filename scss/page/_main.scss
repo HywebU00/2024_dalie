@@ -754,7 +754,7 @@ $imgWH: 60px;
 
     .socialMedia{
       background: transparent;
-      padding: 4px;
+      padding: 4px 0;
       border-radius: 15px;
       a{
         display: block;
@@ -769,6 +769,7 @@ $imgWH: 60px;
       transition: .3s;
 
       &.Show{
+        padding: 4px;
         background: #222;
         width: auto;
       }
