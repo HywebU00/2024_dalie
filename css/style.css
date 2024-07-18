@@ -580,6 +580,12 @@
     align-items: center;
     height: 100px;
   }
+  header a h1 {
+    color: #fff;
+  }
+  header a h1:hover, header a h1:focus-visible {
+    color: #F4EA5A;
+  }
   header h1 {
     padding-left: 330px;
     background: url(../images/logo.svg) left 50% no-repeat;

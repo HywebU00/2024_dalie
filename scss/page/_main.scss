@@ -372,6 +372,13 @@ header{
     height: 100px;
     // background: #5d5d5d;
   }
+  a h1{
+    color: #fff;
+
+    &:hover, &:focus-visible{
+      color: $linkColor;
+    }
+  }
   h1{
     padding-left: 330px;
     background: url(../images/logo.svg) left 50% no-repeat;
