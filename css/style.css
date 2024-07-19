@@ -578,10 +578,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
   }
   header a h1 {
     color: #fff;
+    margin-bottom: 10px;
   }
   header a h1:hover, header a h1:focus-visible {
     color: #F4EA5A;
@@ -659,7 +659,7 @@
   @media (max-width: 992px) {
     header .container {
       flex-wrap: wrap;
-      height: 120px;
+      min-height: 50px;
     }
     header h1 {
       height: 40px;
@@ -672,6 +672,13 @@
       width: 100%;
       font-size: 0;
       justify-content: center;
+      opacity: 1;
+      position: relative;
+    }
+    header .menu.hide {
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
     }
     header .menu a {
       height: 70px;
@@ -696,11 +703,23 @@
       padding-top: calc(100px + 2em);
     }
   }
+  .embadeZone {
+    text-align: center;
+  }
+  .embadeZone iframe {
+    width: 450px;
+    height: 300px;
+  }
+  @media (max-width: 576px) {
+    .embadeZone iframe {
+      width: 320px;
+    }
+  }
   .mobileSearchBtn {
     position: fixed;
     z-index: 1001;
     right: 10px;
-    top: 0;
+    top: 5px;
     font-size: 0;
     width: 52px;
     height: 52px;
@@ -1085,6 +1104,21 @@
   }
   .card p.data b span {
     color: #F4EA5A;
+  }
+  .card p.data b span:last-child {
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .card p.data {
+      font-size: 2.75em;
+      flex-direction: column;
+    }
+    .card p.data > span {
+      height: 90px;
+      width: 90px;
+      line-height: 90px;
+      margin-right: 0;
+    }
   }
   .card._narrow {
     padding: 1.5em 3em;

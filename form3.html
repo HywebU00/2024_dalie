@@ -51,155 +51,15 @@
             <button class="btn submit">回首頁</button>
           </section>
         </form>
+        <!-- fb嵌入 -->
+        <section class="embadeZone">
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRisingStarAward%2F&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        </section>
       </div>
     </div>
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="js/customize.js"></script>
-    <script>
-      // 圓餅圖
-      new Chart(document.getElementById('pieChart'), {
-        type: 'pie',
-        data: {
-          datasets: [{
-            data: [25, 25, 50],
-            backgroundColor: ['#F765A3', '#A155B9', '#F4EA5A'],
-            borderWidth: [0, 0, 0],
-            hoverBackgroundColor: ['#F765A3', '#A155B9', '#F4EA5A']
-          }],
-          labels: [
-            '購物詐騙', '偽冒政府訊息', '名人詐騙'
-          ]
-        },
-        options: {
-          animation: {
-            animateRotate: true,
-            animateScale: true
-          },
-          legend: {
-            display: true,
-            position:'bottom',
-            labels: {
-              fontColor: '#ffffff',
-              fontSize: 16,
-              padding: 16
-            }
-          },
-          tooltips: {
-            // enabled: true,
-            displayColors: false
-          },
-          responsive: true,
-          plugins: {
-            labels: {
-              precision: 1,
-              fontColor: ['#ffffff', '#ffffff', '#222222'],
-              position: 'center',
-              fontSize: 18,
-              fontWeight:'Bold'
-            }
-          }
-        }
-      })
-      // 線條圖
-      new Chart(document.getElementById("line-chart"), {
-        type: "line",
-        data: {
-          labels: [01, 02, 03, 04, 05, 06, 07, 08],
-          datasets: [
-            {
-              data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210],
-              label: "過去8週",
-              borderColor: "#F4EA5A",
-              backgroundColor: "#F4EA5A",
-              pointRadius: 4,
-              pointHoverRadius:4,
-              fill: false
-            },
-            {
-              data: [2820, 3500, 1200, 5020, 6350, 5090, 7470, 1402],
-              label: "前一期",
-              borderColor: "#f35588",
-              backgroundColor: "#f35588",
-              pointRadius: 4,
-              pointHoverRadius:4,
-              fill: false
-            }
-          ]
-        },
-        options: {
-          // layout: {
-          //   padding: {
-          //     left: 20,
-          //     right: 20,
-          //     top: 20,
-          //     bottom: 20
-          //   }
-          // },
-          elements: {
-              line: {
-                  tension: 0
-              }
-          },
-          label: {},
-          legend: {
-            display: true,
-            position: "bottom",
-            labels: {
-              // boxWidth: 50,
-              fontSize: 16,
-              fontColor: "#ffffff",
-              fontStyle: "normal",
-              padding: 16
-            }
-          },
-          tooltips: {
-            // mode: "point",
-            // backgroundColor: "rgba(0, 98, 90, 1)",
-            // fontColor: "#222222",
-            // yPadding: 10,
-            // xPadding: 50,
-            // titleAlign: "center",
-            // bodyAlign: "center",
-            displayColors: false
-          },
-          scales: {
-            xAxes: [
-              {
-                ticks: {
-                  // Include a dollar sign in the ticks
-                  // callback: function (value, index, values) {
-                  //   return value;
-                  // },
-                  fontSize: 14,
-                  fontColor: "#ffffff"
-                },
-                gridLines:{
-                  color:"#4f4f4f",
-                  zeroLineColor:"#4f4f4f"
-                }
-              }
-            ],
-            yAxes: [
-              {
-                ticks: {
-                  // Include a dollar sign in the ticks
-                  // callback: function (value, index, values) {
-                  //   return value + " $";
-                  // },
-                  fontSize: 14,
-                  fontColor: "#ffffff"
-                },
-                gridLines:{
-                  color:"#4f4f4f",
-                  zeroLineColor:"#4f4f4f"
-                }
-              }
-            ]
-          }
-        }
-      });
-    </script>
   </body>
 </html>

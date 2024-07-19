@@ -54,6 +54,15 @@ $(document).ready(function() {
         }
     });
 
+    // 手機版滾動 menu 隱藏
+    // $(window).on('scroll', function() {
+    //     if ($(window).scrollTop() > 70) {
+    //         $('header .menu').addClass('hide');
+    //     } else {
+    //         $('header .menu').removeClass('hide');
+    //     }
+    // });
+
     // select 樣式
     // $('select').each(function(){
     //     var $this = $(this), numberOfOptions = $(this).children('option').length;
