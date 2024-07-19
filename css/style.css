@@ -1123,6 +1123,11 @@
   .card._narrow {
     padding: 1.5em 3em;
   }
+  @media (max-width: 768px) {
+    .card._narrow {
+      padding: 1.5em 2em;
+    }
+  }
   .card._mixed h4 {
     margin: 0;
   }

@@ -1010,6 +1010,9 @@ $imgWH: 60px;
   &._narrow{
     // 窄版
     padding: 1.5em 3em;
+    @media (max-width: $screenSm) {
+      padding: 1.5em 2em;
+    }
   }
   &._mixed{
     $size: auto;
