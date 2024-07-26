@@ -1092,9 +1092,9 @@ $imgWH: 60px;
           max-width: calc(100% - $imgWH - .5em);
         }
       }
-      @media (max-width: $screenMd) {
-        > .col{}
-      }
+      // @media (max-width: $screenMd) {
+      //   > .col{}
+      // }
     }
     .col_48{
       align-items: flex-end;
@@ -1418,16 +1418,23 @@ $duration: 1.4s;
 }
 
 #Demo{
+  background: #333333;
+  .container{
+    max-width: 393px;
+    margin: auto;
+    @include gutter(.5em);
+  }
   // header
   header{
     position: fixed;
     z-index: 1000;
     width: 100%;
-    background: #292929;
+    background: #333333;
     .container{
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      // align-items: center;
+      flex-direction: column;
       // height: 100px;
       // background: #5d5d5d;
     }
@@ -1440,28 +1447,33 @@ $duration: 1.4s;
       }
     }
     h1{
-      padding-left: 330px;
-      background: url(../images/logo.svg) left 50% no-repeat;
-      // background-size: 226px 70px;
+      padding-left: 80px;
+      background: url(../images/logo_mobile.svg) left 50% no-repeat;
       background-size: contain;
-      height: 52px;
-      font-size: 1.65em;
+      height: 40px;
+      font-size: 1.5em;
       letter-spacing: 3px;
       font-weight: normal;
       display: flex;
       align-items: flex-end;
+      margin-top: 10px;
+      margin-bottom: 0;
     }
     .menu{
       display: flex;
+      width: 100%;
+      justify-content: space-between;
+      // background: pink;
       a{
+        flex: 1 1 25%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         font-size: 1em;
         color: #fff;
-        height: 100px;
-        @include gutter(20px);
+        height: 76px;
+        @include gutter(10px);
         transition: .3s;
 
         .icon{
@@ -1533,13 +1545,13 @@ $duration: 1.4s;
         min-height: 50px;
         // height: 120px;
       }
-      h1{
-        height: 40px;
-        margin-top: 10px;
-        margin-bottom: 0;
-        padding-left: 254px;
-        font-size: 1.5em;
-      }
+      // h1{
+      //   height: 40px;
+      //   margin-top: 10px;
+      //   margin-bottom: 0;
+      //   padding-left: 254px;
+      //   font-size: 1.5em;
+      // }
       .menu{
         width: 100%;
         font-size: 1em;
@@ -1560,46 +1572,107 @@ $duration: 1.4s;
         }
       }
     }
-    @media (max-width: $screenXs) {
-      h1{
-        padding-left: 80px;
-        background: url(../images/logo_mobile.svg) left 50% no-repeat;
-      }
+    // @media (max-width: $screenXs) {
+    //   h1{
+    //     padding-left: 80px;
+    //     background: url(../images/logo_mobile.svg) left 50% no-repeat;
+    //   }
+    // }
+  }
+
+  // 內容
+  .main{
+    .container{
+      padding-top: 168px;
     }
   }
 
   // function
   .function{
-    @media (max-width: $screenSm){
-      > * {
-        margin-bottom: 0;
+    margin: 0;
+  }
+
+  // 卡片
+  .card{
+    background: #202020;
+    .info{
+      p{
+        opacity: .6;
+        font-size: 85%;
       }
+    }
+
+    &._narrow{
+      padding: 20px;
+      h4{
+        margin: 0 0 10px;
+      }
+    }
+
+    &._demo{
+      > a{
+        padding: 2px 4px;
+      }
+      .col_39{
+        align-items: flex-end;
+        margin: 2px 4px;
+      }
+      .info{
+        flex: 1 1 auto;
+        max-width: calc(100% - 80px - 0.5em);
+      }
+      .foto{
+        flex: 0 1 auto;
+      }
+    }
+    
+  }
+
+  .article{
+    margin-bottom: 2em;
+    h3{
+      margin: 1em 0 .5em;
+    }
+    li, p{
+      opacity: .6;
+      line-height: 1.4;
     }
   }
 
+  .drop{
+    min-width: 185px;
+  }
+
   .site-search{
-    margin: 6px auto;
+    position: fixed;
+    width: 380px;
+    top: 126px;
+    z-index: 1001;
+    margin: 0 auto;
+    padding: 6px 0;
+    background: #333;
     button.submit{
       font-size: 0;
       width: 40px;
-      height: 38px;
+      height: 28px;
       border: none;
       background: url(../images/icon-search.svg) 50% 50% no-repeat transparent;
-      background-size: 32px 32px;
+      background-size: 24px 24px;
       position: absolute;
-      right: 1px;
-      border-radius: 0 3px 3px 0;
+      left: 1px;
+      border-radius: 3px 0 0 3px;
       transition: .3s;
 
       &:hover, &:focus-visible{
         background: url(../images/icon-search.svg) 50% 50% no-repeat #464646;
-        background-size: 32px 32px;
+        background-size: 24px 24px;
       }
     }
   }
   input[type=search] {
       width: 100%;
-      padding: 8px 52px 8px 26px;
+      padding: 4px 26px 4px 52px;
+      background: #202020;
       transition: 0.3s;
   }
 }
