@@ -1286,9 +1286,9 @@ $duration: 1.4s;
       background-size: 36px 36px;
     }
   }
-  @media (max-width: $screenMd) {
-    display: none;
-  }
+  // @media (max-width: $screenMd) {
+  //   display: none;
+  // }
 }
 
 // 資訊分兩端
@@ -1414,5 +1414,192 @@ $duration: 1.4s;
       // opacity: 0;
       height: 0;
     }
+  }
+}
+
+#Demo{
+  // header
+  header{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    background: #292929;
+    .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // height: 100px;
+      // background: #5d5d5d;
+    }
+    a h1{
+      color: #fff;
+      margin-bottom: 10px;
+
+      &:hover, &:focus-visible{
+        color: $linkColor;
+      }
+    }
+    h1{
+      padding-left: 330px;
+      background: url(../images/logo.svg) left 50% no-repeat;
+      // background-size: 226px 70px;
+      background-size: contain;
+      height: 52px;
+      font-size: 1.65em;
+      letter-spacing: 3px;
+      font-weight: normal;
+      display: flex;
+      align-items: flex-end;
+    }
+    .menu{
+      display: flex;
+      a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+        color: #fff;
+        height: 100px;
+        @include gutter(20px);
+        transition: .3s;
+
+        .icon{
+          display: block;
+          width: 32px;
+          height: 32px;
+          margin-bottom: 5px;
+          background-size: cover;
+
+          &._hot{
+            background: url(../images/menu-hot_demo.png) left top no-repeat;
+            background-size: cover;
+          }
+          &._new{
+            background: url(../images/menu-new_demo.png) left top no-repeat;
+            background-size: cover;
+          }
+          &._chart{
+            background: url(../images/menu-chart_demo.png) left top no-repeat;
+            background-size: cover;
+          }
+          &._member{
+            background: url(../images/menu-member_demo.png) left top no-repeat;
+            background-size: cover;
+          }
+        }
+
+        &:hover{
+          background: $bgColorHover;
+          color: #2a96f9;
+          .icon{
+            &._hot,
+            &._new,
+            &._chart,
+            &._member{
+              background-position: left bottom;
+            }
+          }
+        }
+
+        &.act{
+          position: relative;
+          color: #2a96f9;
+          .icon{
+            &._hot,
+            &._new,
+            &._chart,
+            &._member{
+              background-position: left bottom;
+            }
+          }
+          &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: $linkColor;
+
+            display: none;
+          }
+        }
+      }
+    }
+    @media (max-width: $screenMd) {
+      .container{
+        flex-wrap: wrap;
+        min-height: 50px;
+        // height: 120px;
+      }
+      h1{
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-left: 254px;
+        font-size: 1.5em;
+      }
+      .menu{
+        width: 100%;
+        font-size: 1em;
+        justify-content: center;
+        opacity: 1;
+        position: relative;
+        // transition: .3s;
+
+        &.hide{
+          opacity: 0;
+          position: absolute;
+          z-index: -1;
+        }
+
+        a{
+          height: 60px;
+          flex: 1 1 auto;
+        }
+      }
+    }
+    @media (max-width: $screenXs) {
+      h1{
+        padding-left: 80px;
+        background: url(../images/logo_mobile.svg) left 50% no-repeat;
+      }
+    }
+  }
+
+  // function
+  .function{
+    @media (max-width: $screenSm){
+      > * {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .site-search{
+    margin: 6px auto;
+    button.submit{
+      font-size: 0;
+      width: 40px;
+      height: 38px;
+      border: none;
+      background: url(../images/icon-search.svg) 50% 50% no-repeat transparent;
+      background-size: 32px 32px;
+      position: absolute;
+      right: 1px;
+      border-radius: 0 3px 3px 0;
+      transition: .3s;
+
+      &:hover, &:focus-visible{
+        background: url(../images/icon-search.svg) 50% 50% no-repeat #464646;
+        background-size: 32px 32px;
+      }
+    }
+  }
+  input[type=search] {
+      width: 100%;
+      padding: 8px 52px 8px 26px;
+      transition: 0.3s;
   }
 }

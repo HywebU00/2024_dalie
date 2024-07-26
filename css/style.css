@@ -1339,11 +1339,6 @@
     background: url(../images/icon-search.svg) 50% 50% no-repeat #464646;
     background-size: 36px 36px;
   }
-  @media (max-width: 992px) {
-    .site-search {
-      display: none;
-    }
-  }
   .infoSplit p {
     display: flex;
     justify-content: space-between;
@@ -1447,5 +1442,160 @@
   }
   .mask._show:after {
     height: 0;
+  }
+  #Demo header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    background: #292929;
+  }
+  #Demo header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #Demo header a h1 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  #Demo header a h1:hover, #Demo header a h1:focus-visible {
+    color: #F4EA5A;
+  }
+  #Demo header h1 {
+    padding-left: 330px;
+    background: url(../images/logo.svg) left 50% no-repeat;
+    background-size: contain;
+    height: 52px;
+    font-size: 1.65em;
+    letter-spacing: 3px;
+    font-weight: normal;
+    display: flex;
+    align-items: flex-end;
+  }
+  #Demo header .menu {
+    display: flex;
+  }
+  #Demo header .menu a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    color: #fff;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: 0.3s;
+  }
+  #Demo header .menu a .icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+    background-size: cover;
+  }
+  #Demo header .menu a .icon._hot {
+    background: url(../images/menu-hot_demo.png) left top no-repeat;
+    background-size: cover;
+  }
+  #Demo header .menu a .icon._new {
+    background: url(../images/menu-new_demo.png) left top no-repeat;
+    background-size: cover;
+  }
+  #Demo header .menu a .icon._chart {
+    background: url(../images/menu-chart_demo.png) left top no-repeat;
+    background-size: cover;
+  }
+  #Demo header .menu a .icon._member {
+    background: url(../images/menu-member_demo.png) left top no-repeat;
+    background-size: cover;
+  }
+  #Demo header .menu a:hover {
+    background: #464646;
+    color: #2a96f9;
+  }
+  #Demo header .menu a:hover .icon._hot, #Demo header .menu a:hover .icon._new, #Demo header .menu a:hover .icon._chart, #Demo header .menu a:hover .icon._member {
+    background-position: left bottom;
+  }
+  #Demo header .menu a.act {
+    position: relative;
+    color: #2a96f9;
+  }
+  #Demo header .menu a.act .icon._hot, #Demo header .menu a.act .icon._new, #Demo header .menu a.act .icon._chart, #Demo header .menu a.act .icon._member {
+    background-position: left bottom;
+  }
+  #Demo header .menu a.act:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: #F4EA5A;
+    display: none;
+  }
+  @media (max-width: 992px) {
+    #Demo header .container {
+      flex-wrap: wrap;
+      min-height: 50px;
+    }
+    #Demo header h1 {
+      height: 40px;
+      margin-top: 10px;
+      margin-bottom: 0;
+      padding-left: 254px;
+      font-size: 1.5em;
+    }
+    #Demo header .menu {
+      width: 100%;
+      font-size: 1em;
+      justify-content: center;
+      opacity: 1;
+      position: relative;
+    }
+    #Demo header .menu.hide {
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+    }
+    #Demo header .menu a {
+      height: 60px;
+      flex: 1 1 auto;
+    }
+  }
+  @media (max-width: 576px) {
+    #Demo header h1 {
+      padding-left: 80px;
+      background: url(../images/logo_mobile.svg) left 50% no-repeat;
+    }
+  }
+  @media (max-width: 768px) {
+    #Demo .function > * {
+      margin-bottom: 0;
+    }
+  }
+  #Demo .site-search {
+    margin: 6px auto;
+  }
+  #Demo .site-search button.submit {
+    font-size: 0;
+    width: 40px;
+    height: 38px;
+    border: none;
+    background: url(../images/icon-search.svg) 50% 50% no-repeat transparent;
+    background-size: 32px 32px;
+    position: absolute;
+    right: 1px;
+    border-radius: 0 3px 3px 0;
+    transition: 0.3s;
+  }
+  #Demo .site-search button.submit:hover, #Demo .site-search button.submit:focus-visible {
+    background: url(../images/icon-search.svg) 50% 50% no-repeat #464646;
+    background-size: 32px 32px;
+  }
+  #Demo input[type=search] {
+    width: 100%;
+    padding: 8px 52px 8px 26px;
+    transition: 0.3s;
   }
 }/*# sourceMappingURL=style.css.map */
