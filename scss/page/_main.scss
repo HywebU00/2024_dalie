@@ -237,7 +237,7 @@ $select-height: 40px;
   font-size: 1em;
   width: 100%;
   min-width: 220px;
-  margin: 6px 0;
+  margin: 6px 6px 6px 0;
   &:hover, &:focus-visible {
     .dropOption {
       display: block;
@@ -696,6 +696,7 @@ $imgWH: 60px;
   > .col{
     &:first-child{
       flex: 0 0 30%;
+      max-width: 30%;
       // margin-right: 1em;
     }
     &:last-child{
@@ -714,7 +715,7 @@ $imgWH: 60px;
         }
         &:last-child{
           max-width: initial;
-          padding-left: 16px;
+          padding-left: 12px;
         }
       }
     }
@@ -723,7 +724,8 @@ $imgWH: 60px;
     > .col{
       &:first-child,
       &:last-child{
-        flex: 0 0 100%;
+        // flex: 0 0 100%;
+        flex: 1 1 auto;
         max-width: 100%;
       }
     }
@@ -731,6 +733,19 @@ $imgWH: 60px;
 }
 
 // --------------------------------------------------------------- 客製化樣式
+// 狀態
+.red, .green, .yellow{
+  font-weight: bold;
+}
+.red{
+  color: red;
+}
+.green{
+  color: #2fbe08;
+}
+.yellow{
+  color: yellow;
+}
 // 卡片
 .card{
   background: #383838;
@@ -835,23 +850,17 @@ $imgWH: 60px;
     padding-left: 22px;
     background: url(../images/icon-state.png) left 50% no-repeat;
     background-size: 20px 20px;
+    opacity: 1;
 
-    // 狀態
-    &.red, &.green, &.yellow{
-      font-weight: bold;
-    }
     &.red{
-      color: red;
       background: url(../images/icon-state_red.svg) left 50% no-repeat;
       background-size: 20px 20px;
     }
     &.yellow{
-      color: yellow;
       background: url(../images/icon-state_yellow.svg) left 50% no-repeat;
       background-size: 20px 20px;
     }
     &.green{
-      color: #2fbe08;
       background: url(../images/icon-state_green.svg) left 50% no-repeat;
       background-size: 20px 20px;
     }
@@ -883,7 +892,6 @@ $imgWH: 60px;
       background-size: 20px 20px;
     }
   }
-
   .foto{
     width: $imgWH;
     height: $imgWH;
@@ -934,6 +942,11 @@ $imgWH: 60px;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
+      &.visible{
+        a, span{
+          opacity: 1;
+        }
+      }
     }
     .frequency{
       // 通報次數
@@ -941,10 +954,11 @@ $imgWH: 60px;
       font-size: 75%;
       white-space: nowrap;
       padding-left: 18px;
+      margin-left: 2px;
+      margin-right: 2px;
       background: url(../images/icon-people.svg) left 50% no-repeat;
     }
   }
-
   .col_48 + .flexible{
     margin: 10px 0 0;
   }
@@ -1061,6 +1075,29 @@ $imgWH: 60px;
           z-index: -1;
         }
       }
+    }
+  }
+  &._demo{
+    $imgWH: 80px;
+    .col_39{
+      > .col{
+        &:first-child{
+          flex: 0 0 20%;
+          min-width: $imgWH;
+          max-width: $imgWH;
+          height: $imgWH;
+        }
+        &:last-child{
+          flex: 0 1 auto;
+          max-width: calc(100% - $imgWH - .5em);
+        }
+      }
+      @media (max-width: $screenMd) {
+        > .col{}
+      }
+    }
+    .col_48{
+      align-items: flex-end;
     }
   }
 }
@@ -1216,7 +1253,7 @@ $duration: 1.4s;
     //   margin-left: 0;
     // }
     > *{
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       justify-content: center;
       width: 100%;
     }
@@ -1251,6 +1288,17 @@ $duration: 1.4s;
   }
   @media (max-width: $screenMd) {
     display: none;
+  }
+}
+
+// 資訊分兩端
+.infoSplit{
+  // width: 50%;
+  // margin: auto;
+  p{
+    display: flex;
+    justify-content: space-between;
+    span{}
   }
 }
 
