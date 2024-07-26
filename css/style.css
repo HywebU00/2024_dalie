@@ -1497,7 +1497,7 @@
     align-items: center;
     font-size: 1em;
     color: #fff;
-    height: 76px;
+    height: 60px;
     padding-left: 10px;
     padding-right: 10px;
     transition: 0.3s;
@@ -1572,7 +1572,7 @@
     }
   }
   #Demo .main .container {
-    padding-top: 162px;
+    padding-top: 163px;
   }
   #Demo .function {
     margin: 0;
@@ -1622,10 +1622,11 @@
     position: fixed;
     width: 390px;
     top: 120px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1001;
     margin: 0 auto;
-    padding: 6px 8px;
+    padding: 6px 8px 6px;
     background: #333;
   }
   #Demo .site-search button.submit {
