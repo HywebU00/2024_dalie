@@ -1576,6 +1576,7 @@
   }
   #Demo .function {
     margin: 0;
+    justify-content: center;
   }
   #Demo .card {
     background: #202020;
