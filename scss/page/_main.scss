@@ -1583,7 +1583,7 @@ $duration: 1.4s;
   // 內容
   .main{
     .container{
-      padding-top: 168px;
+      padding-top: 162px;
     }
   }
 
@@ -1640,17 +1640,20 @@ $duration: 1.4s;
   }
 
   .drop{
-    min-width: 185px;
+    min-width: 180px;
+    margin: 6px;
   }
 
   .site-search{
     position: fixed;
-    width: 380px;
-    top: 126px;
+    width: 390px;
+    top: 120px;
+    left: 0;
     z-index: 1001;
     margin: 0 auto;
-    padding: 6px 0;
+    padding: 6px 8px;
     background: #333;
+    // background: red;
     button.submit{
       font-size: 0;
       width: 40px;
@@ -1659,7 +1662,7 @@ $duration: 1.4s;
       background: url(../images/icon-search.svg) 50% 50% no-repeat transparent;
       background-size: 24px 24px;
       position: absolute;
-      left: 1px;
+      left: 9px;
       border-radius: 3px 0 0 3px;
       transition: .3s;
 
@@ -1670,7 +1673,8 @@ $duration: 1.4s;
     }
   }
   input[type=search] {
-      width: 100%;
+      width: 393px;
+      // margin: 0 .5em;
       padding: 4px 26px 4px 52px;
       background: #202020;
       transition: 0.3s;
